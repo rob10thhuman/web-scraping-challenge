@@ -7,8 +7,8 @@ mongo=PyMongo(app,uri="mongodb://localhost:27017/mars_app")
 
 @app.route("/")
 def index():
-	mars_scrape = mongo.db.mars_data.find_one()
-	return render_template("index.html", mars_data=mars_scrape)
+    mars_scrape = mongo.db.mars_data.find_one()
+    return render_template("index.html", mars_data=mars_scrape)
 
 @app.route("/scrape")
 def scrape():

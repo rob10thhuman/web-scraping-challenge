@@ -102,5 +102,5 @@ def scrape():
     return(mars_data)
 
 
-if __name__ == '__main__':
-    globals()[sys.argv[1]]()
+# if __name__ == '__main__':
+#     globals()[sys.argv[1]]()

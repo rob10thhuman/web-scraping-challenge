@@ -18,9 +18,6 @@
        <h1 class="display-3" style="position: absolute; top: 8px; left: 30%; text-shadow: 5px 5px black"><b>Mission to Mars</b></h1>
        <br><br><br><br><br><br><br>
        <h3><a class="btn btn-warning btn-lg" style="border-color:black;" href="/scrape" role="button">Scrape New Data</a></h3>
-       <p>{{mars_data.scrape_date}}</p>
-       <p>{{mars_data.scrape_time}}</p>
-       <p>Scrape time (seconds): {{mars_data.process_time}}</p>
      </div>
    </div>
    <!--Latest News-->
@@ -29,8 +26,8 @@
        <div>
          <div>
            <h4>Latest Mars News</h4>
-           <h5 style="color: blanchedalmond">{{mars_data.Title}}</h5>
-           <p style="color: beige">{{mars_data.Body}}</p>
+           <h5 style="color: blanchedalmond">{{mars_data.news_title}}</h5>
+           <p style="color: beige">{{mars_data.news_body}}</p>
          </div>
        </div>
      </div>
@@ -40,7 +37,7 @@
      <div class="row">
        <div class="col-md-8 col-sm-12">
          <h4>Featured Mars Image</h4>
-         <img src="{{mars_data.featured_image_url}}" class="img-responsive border" style="max-width:100%; max-height: auto;" alt="Mars Featured Image"/>
+         <img src="{{mars_data.featured_image_url[0]}}" class="img-responsive border" style="max-width:100%; max-height: auto;" alt="Mars Featured Image"/>
        </div>
        <!-- Mars Facts -->
        <div class="col-md-4">
@@ -58,9 +55,9 @@
        {% for i in range(4) %}
          <div class="col-md-6">
            <div class="card text-white bg-danger" style="margin: 20px;">
-           <img class="card-img-top" src="{{mars_data.hemispheres.url[i]}}" alt="..."/>
+           <img class="card-img-top" src="{{mars_data.hemispheres[i].img_url}}" alt="..."/>
              <div class="card-body">
-               <p class="card-text">{{mars_data.hemispheres.title[i]}}</p>
+               <p class="card-text">{{mars_data.hemispheres[i].title}}</p>
              </div>
            </div>
          </div>
